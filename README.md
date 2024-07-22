@@ -37,7 +37,20 @@
         2. Protocol DAOs generally adopts a decentralized governance model  where token holders participate in the organization's decision-making and management.
         3. The code and operation of Protocol DAOs are usually open and transparent, and anyone can participate.
 
-Examples of Protocol DAOs
+* Examples of Protocol DAOs
 
-* MakerDAO: MakerDAO is responsible for managing the decentralized stablecoin DAI. DAO members are responsible for setting parameters for the protocol, such as adjusting interest rates, adding/removing collateral assets, and onboarding/offboarding core team members.
+    * MakerDAO: MakerDAO is responsible for managing the decentralized stablecoin DAI. DAO members are responsible for setting parameters for the protocol, such as adjusting interest rates, adding/removing collateral assets, and onboarding/offboarding core team members.
+
+### Investment DAOs
+
+* An Investment Decentralized Autonomous Organization is a DAO responsible for managing or controlling funds in the DAO treasury.The main purpose of this type of DAO is to generate profits for its members, similar to a private equity fund or hedge fund.
+
+    * Investment DAOs have the following characteristics:
+        * The main goal of this DAO is to generate profit from investments.
+        * These DAO's follows a decentralized governance model, where token holders participate in the organization's decision-making and management.
+        * Investment DAOs can have diversified investment strategies, including investing in assets such as cryptocurrencies, stocks, and real estate.
+
+* Examples of Investment DAOs:
+    * BitDAO: BitDAO is a DAO where BIT token holders vote on various investment strategies and generate profit for the DAO treasury. BitDAO claims to have invested over $3.8 billion in Web3 projects.
+
 
