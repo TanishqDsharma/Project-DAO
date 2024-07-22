@@ -1,66 +1,43 @@
-## Foundry
+# Project - DAO
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## History of DAO's?
 
-Foundry consists of:
+* The concept of DAO was proposed by  Daniel Larimer in September, 2013. However, since bitcoin doesn't support smart contracts, DAO's implementation didn't really started until the launch of ethereum.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## The DAO:
+* On April 30, 2016, a startup team called The DAO raised $150 million in just 28 days through an ICO crowdfunding on Ethereum using smart contracts, becoming the largest crowdfunding project in history. This marked the first practice of DAOs.
 
-## Documentation
+## What is a DAO?
 
-https://book.getfoundry.sh/
+* DAO stands for Decentralized Autonomous Organization. It is a decentralized organization managed by smart contracts
+    * It has no centralized leadership
+    * DAO is governed by all its members
+    * DAO members can vote to make decisions for the organization
 
-## Usage
+* NOTE: In short, DAO is a new type of organizational structure that aims to transcend traditional organizational forms and make collective decisions in a distributed, transparent, and trust-minimized way.
 
-### Build
+### Characterstics of A Dao: 
 
-```shell
-$ forge build
-```
+1. Decentralization: One of the main characterstic of DAO is that it is decentralized which means no single authority controls it.The decision-making and execution processes of DAOs are automatically executed by smart contracts, and are not controlled by any individual or group.
 
-### Test
+2. Autonomy: Another core characteristic of DAOs is autonomy. This means that the operating rules of DAOs are defined by smart contracts, and all members can participate in the governance of the organization. 
 
-```shell
-$ forge test
-```
+3. Transparency: DAOs are considered more transparent, all the actions performed are recorded on the blockchain and everyone can view them. This means that all members can understand the organization's financial status, decision-making process, and other information.
 
-### Format
+4. Minimized Trust:DAOs uses smart contracts for trust.  Smart contracts are codes that run on the blockchain and can automatically execute preset terms and conditions, ensuring that the operation of DAOs is in the interests of all members.
 
-```shell
-$ forge fmt
-```
+# Types of DAOs:
 
-### Gas Snapshots
+### Protocol DAO:
 
-```shell
-$ forge snapshot
-```
+* A Protocol Decentralized Autonomous Organization is a DAO responsible for developing and managing decentralized applications.The main task of this type of DAO is to develop open-source technology, similar to a company or foundation.
 
-### Anvil
+    * Protocol DAOs have the following characteristics:
+        1. The primary goal of these DAOs is to develop and maintain open-source technology, providing infrastructure for dApp development.
+        2. Protocol DAOs generally adopts a decentralized governance model  where token holders participate in the organization's decision-making and management.
+        3. The code and operation of Protocol DAOs are usually open and transparent, and anyone can participate.
 
-```shell
-$ anvil
-```
+Examples of Protocol DAOs
 
-### Deploy
+* MakerDAO: MakerDAO is responsible for managing the decentralized stablecoin DAI. DAO members are responsible for setting parameters for the protocol, such as adjusting interest rates, adding/removing collateral assets, and onboarding/offboarding core team members.
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
