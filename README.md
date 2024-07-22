@@ -54,3 +54,50 @@
     * BitDAO: BitDAO is a DAO where BIT token holders vote on various investment strategies and generate profit for the DAO treasury. BitDAO claims to have invested over $3.8 billion in Web3 projects.
 
 
+### Social DAOs
+
+* This type of DAO is responsible for managing a shared social space, co-owning valuable assets, and creating a culture and organizing events for its members.Social DAOs organize communities around entertainment, art, gaming, and other social areas, similar to modern social clubs.
+
+    * Social DAOs have the following characteristics:
+        1. The main focus of this DAO is to  provide a platform for members to communicate and interact, and build social relationships.
+        2. Like any other DAO this type of DAO also follows the decentralized governance model where token holders participate in the organization's decision-making and management.
+        3. Social DAOs usually build unique cultures and organize various events, such as parties, game competitions, etc.
+
+* Examples of Social DAOs
+    * Bored Ape Yacht Club (BAYC): BAYC is a limited-edition NFT collection, where each NFT serves as a membership pass and grants access to special benefits. The BAYC community has a rich culture and organizes various events, such as offline parties and game competitions.
+
+
+# DAO Functions: 
+
+## Approving Upgrades and Open-sourcing:
+
+### What is Approving Upgrades and Open-Sourcing Protocols?
+
+Approving Upgrades and Open-Sourcing Protocols refers to the decision making process by which a DAO community upgrades or open-sources a protocol. 
+
+* This process invloves the below steps:
+    1. Proposing an Upgrade or Open-Sourcing: Community members can propose upgrading or open-sourcing the protocol and detail the proposal's content and rationale.
+    2. Community Discussion: Community members discuss the proposal and provide feedback and suggestions.
+    3. Voting: Community members vote on the proposal to decide whether to approve it.
+
+* Approving Upgrades and Open sourcing protocols can help and benefit DAO immensely
+    * Upgrades results in improved protocol efficiency, fixes for vulnerabilites found in the protocol etc.
+    * On the other hand, Open-source allows more people to participate and contribute to the protocol.
+
+* Example:
+    *  Uniswap is a decentralized exchange protocol. The Uniswap community voted to upgrade Uniswap V2 to Uniswap V3 to improve the protocol's capital efficiency and scalability.
+
+## Long-Term Roadmap Decision-Making in DAOs:
+
+* Long-term roadmap decision-making in DAOs refers to major decisions about the future direction of a DAO, such as:
+    * What is the DAO's ultimate vision?
+    * In which areas will the DAO develop?
+    * What technologies and strategies will the DAO adopt?
+
+* Process of Formulating Long-Term Roadmaps
+    * Community members discuss the future development of the DAO and make suggestions.
+    * The core team or community members formulate specific proposals based on the results of the community discussion.
+    * Community members vote on the proposal to decide whether to adopt it.
+
+* Example:
+    *  Aave is a decentralized lending protocol. The Aave community voted to expand the Aave protocol to multiple blockchain networks to improve the protocol's usability and scalability. 
