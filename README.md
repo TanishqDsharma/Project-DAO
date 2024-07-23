@@ -9,4 +9,12 @@ As we know we use interfaces to define standards:
 * So we will be defining an interface for the proposals created in our DAO contract.
 
 
+Dao.sol:
+* This contract contains the main functionality of our DAO proposal voting and execution system.
+    * Use an Interface to define standard for proposals.
+    * This contract will have struct called Proposal, so that it can keep information about the proposals
+    * Implmenting functions to add new DAO members and assigning them a balance
+    * Allows each member to create a new proposal
+
+    
 
