@@ -97,4 +97,27 @@ address user  = makeAddr("USER");
         assert(votes==100);
      }
 
+    ///////////////////////////////
+    ///ExecuteProposal Tests //////
+    ///////////////////////////////
+
+    function testRevertsIfInsufficientVotesRecived() public {
+        vm.startPrank(user);
+        dao.createProposal("Testing Proposals",address(proposal));
+        dao.mockBalance(user, 100);
+        vm.expectRevert();
+        dao.ExecuteProposal(0); 
+        vm.stopPrank();
+    }
+
+    function testExecuteProposal() public {
+        vm.startPrank(user);
+        dao.createProposal("Testing Proposals",address(proposal));
+        dao.mockBalance(user, 100);
+        dao.vote(0);
+        dao.ExecuteProposal(0); 
+        (,,,bool executed,) = dao.getProposals(0);
+        vm.stopPrank();
+        assert(executed==true);
+    }
 }
