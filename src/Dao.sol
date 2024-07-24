@@ -31,7 +31,7 @@ contract Dao {
  * Since our DAO contract only executes a proposal if it receives the majority vote from all participating members, 
    it's essential to keep track of all participating members and their corresponding voting power, aka balance.
  */
-mapping(address=>uint256) public memberBalances;
+mapping(address=>uint256) private  memberBalances;
 
 uint256 public totalBalance; //The amount of votes needed to pass a proposal is proportional to the totalBalance.
 
@@ -136,6 +136,14 @@ function ExecuteProposal(uint256 proposalId) external{
 
     // 4. Updating proposal as executed
     proposal.executed=true;
+}
+
+////////////////////////
+// Getter Functions ////  
+////////////////////////        
+
+function getMemberBalance() public view returns(uint256) {
+    return memberBalances[msg.sender];
 }
 
 
