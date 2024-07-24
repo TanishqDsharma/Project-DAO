@@ -23,6 +23,13 @@ interface  ITargetContract  {
 
 contract Dao {
 
+////////// 
+//error //   
+//////////
+
+error Dao__ProposalIdCannotBeNegative();
+
+
 /////////////////////
 /// State Vars //////
 ///////////////////// 
@@ -99,7 +106,7 @@ function createProposal(
  * @param proposalId to identify the proposal to vote on
  */
 function vote(uint256 proposalId) external {
-    
+
     // 1. Checking if the proposal has been executed
 
         Proposal storage proposal = proposals[proposalId];
@@ -148,7 +155,7 @@ function getMemberBalance() public view returns(uint256) {
 }
 
 function getProposals(uint256 proposalId) public view returns( 
-    address ,string memory ,uint256 otes,bool ,address )
+    address ,string memory ,uint256 ,bool ,address )
     {
       Proposal memory proposal = proposals[proposalId];
 
