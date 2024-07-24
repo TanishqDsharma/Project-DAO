@@ -32,13 +32,19 @@ contract Dao {
    it's essential to keep track of all participating members and their corresponding voting power, aka balance.
  */
 mapping(address=>uint256) public memberBalances;
+
 uint256 public totalBalance; //The amount of votes needed to pass a proposal is proportional to the totalBalance.
 
 uint256 public proposalCount; // Assign an ID to this proposal the user is trying to create.
 
 mapping(uint256=>Proposal) public proposals; //mapping to store and find proposals by ID
 
+/**
+ *  Private mapping, memberVotes, allows to link a member's address to another mapping 
+    that maps from each proposal to whether the member has voted or not.
+ */
 
+mapping(address=>mapping(uint256 => bool)) private memberVotes;
 
 /**
  * creator variable represents the address of the account that created the proposal.
@@ -87,7 +93,33 @@ function createProposal(
         proposal.targetAddress=target;
 }
 
+/**
+ * 
+ * @param proposalId to identify the proposal to vote on
+ */
+function vote(uint256 proposalId) external {
+    
+    // 1. check if the proposal has been executed
+
+        Proposal storage proposal = proposals[proposalId];
+
+        require(!proposal.executed,"Proposal has been executed, you cannot Vote now!");
+
+    // 2. check that the member has voting power
+        uint256 memberBalance = memberBalances[msg.sender];
+        require(memberBalance > 0,"Member does not have voting power");
+
+    // 3. check that the member has voted for the proposal
+        require(!memberVotes[msg.sender][proposalId],"You cannot vote again on the same proposal!");
+    // 4. add the member’s vote to our tracking system
+        proposal.votes+=memberBalance;
+    // 5. Mark the member as voted on this proposal
+    memberVotes[msg.sender][proposalId]=true;
 }
+
+
+}
+
 
 contract Proposal1{
 
