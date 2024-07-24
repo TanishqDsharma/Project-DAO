@@ -51,4 +51,50 @@ address user  = makeAddr("USER");
         assert(creator==user);
         assert(keccak256(abi.encode(description))==keccak256(abi.encode("Testing Proposals")));
      }
+
+     ///////////////////////// 
+     /// Vote Tests ////////// 
+     ///////////////////////// 
+
+     function testRevertsIfProposalHasBeenExecuted() public {
+        vm.startPrank(user);
+        dao.createProposal("Testing Proposals",address(proposal));
+        dao.mockBalance(user, 100);
+        dao.vote(0);
+        dao.ExecuteProposal(0);
+        vm.expectRevert();
+        dao.vote(0);
+        vm.stopPrank();
+     }
+
+     function testRevertsIfBalanceIsZero() public {
+        vm.startPrank(user);
+        dao.createProposal("Testing Proposals",address(proposal));
+        dao.mockBalance(user, 0);
+        vm.expectRevert();
+        dao.vote(0);
+        vm.stopPrank();
+     }
+
+     function testRevertsIfMemberVotesOnSameProposalAgain() public {
+        vm.startPrank(user);
+        dao.createProposal("Testing Proposals",address(proposal));
+        dao.mockBalance(user, 100);
+        dao.vote(0);
+
+        vm.expectRevert();
+        dao.vote(0);
+        vm.stopPrank();
+     }
+
+     function testToCheckMemberVotesAreBeingRecorded() public {
+        vm.startPrank(user);
+        dao.createProposal("Testing Proposals",address(proposal));
+        dao.mockBalance(user, 100);
+        dao.vote(0);    
+        (,,uint256 votes,,) = dao.getProposals(0);
+        vm.stopPrank();
+        assert(votes==100);
+     }
+
 }
