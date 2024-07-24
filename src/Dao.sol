@@ -83,6 +83,7 @@ function mockBalance(
 function createProposal(
     string memory description, address target) 
         external {
+        
         //we create a local variable, proposalId, initialized with proposalCount, which is then incremented to ensure uniqueness.
         uint256 proposalId = proposalCount++;
         Proposal storage proposal = proposals[proposalId];
@@ -146,6 +147,19 @@ function getMemberBalance() public view returns(uint256) {
     return memberBalances[msg.sender];
 }
 
+function getProposals(uint256 proposalId) public view returns( 
+    address ,string memory ,uint256 otes,bool ,address )
+    {
+      Proposal memory proposal = proposals[proposalId];
+
+      address creator = proposal.creator;
+      string memory description=  proposal.description;
+      uint256 votes = proposal.votes;
+      bool executed= proposal.executed;
+      address targetAddress = proposal.targetAddress;
+
+      return (creator,description,votes,executed,targetAddress);
+    }
 
 }
 
