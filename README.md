@@ -15,6 +15,8 @@ Dao.sol:
     * This contract will have struct called Proposal, so that it can keep information about the proposals
     * Implmenting functions to add new DAO members and assigning them a balance
     * Allows each member to create a new proposal
+    * Implementing Vote function that allows every member to vote on proposals
+    * Executing a Proposal after it passed voting.
 
     
 
