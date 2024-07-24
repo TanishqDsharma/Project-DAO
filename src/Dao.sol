@@ -99,22 +99,43 @@ function createProposal(
  */
 function vote(uint256 proposalId) external {
     
-    // 1. check if the proposal has been executed
+    // 1. Checking if the proposal has been executed
 
         Proposal storage proposal = proposals[proposalId];
 
         require(!proposal.executed,"Proposal has been executed, you cannot Vote now!");
 
-    // 2. check that the member has voting power
+    // 2. Checking that the member has voting power
         uint256 memberBalance = memberBalances[msg.sender];
         require(memberBalance > 0,"Member does not have voting power");
 
-    // 3. check that the member has voted for the proposal
+    // 3. Checking that the member has voted for the proposal
         require(!memberVotes[msg.sender][proposalId],"You cannot vote again on the same proposal!");
-    // 4. add the member’s vote to our tracking system
+    // 4. Add the member’s vote to our tracking system
         proposal.votes+=memberBalance;
-    // 5. Mark the member as voted on this proposal
+
+    // 5. Marks the member as voted on this proposal
     memberVotes[msg.sender][proposalId]=true;
+}
+
+/**
+ * 
+ * @param proposalId represents the proposal that need to be executed
+ */
+function ExecuteProposal(uint256 proposalId) external{
+    // 1. Checking the proposal execution status
+    
+    Proposal storage proposal = proposals[proposalId];
+    require(!proposal.executed,"Proposal has already been executed");
+
+    // 2. Checking proposal votes
+    require(proposal.votes >= totalBalance / 2,"Insufficient votes for proposal");    
+    
+    // 3. Executing proposal
+    ITargetContract(proposal.targetAddress).dosome();
+
+    // 4. Updating proposal as executed
+    proposal.executed=true;
 }
 
 
