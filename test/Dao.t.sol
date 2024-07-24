@@ -38,4 +38,17 @@ address user  = makeAddr("USER");
         assert(actualMemberBalance==1000);
         assert(actualTotalBalance==1000);
     }
+
+    /////////////////////////////
+    ///CreateProposal Tests /////
+    /////////////////////////////
+
+    function testCreateProposal() public {
+        vm.startPrank(user);
+        dao.createProposal("Testing Proposals",address(proposal));
+        vm.stopPrank();
+        (address creator,string memory description,,,) = dao.getProposals(0);
+        assert(creator==user);
+        assert(keccak256(abi.encode(description))==keccak256(abi.encode("Testing Proposals")));
+     }
 }
