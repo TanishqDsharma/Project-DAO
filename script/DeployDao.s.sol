@@ -5,7 +5,7 @@ import {Script} from "../lib/forge-std/src/Script.sol";
 import {Dao,Proposal1} from "../src/Dao.sol";
 
 
-contract DeployDAO is Script {
+contract DeployDao is Script {
 
 function run() external returns(Dao,Proposal1){
     vm.startBroadcast();
